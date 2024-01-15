@@ -8,8 +8,11 @@ export function MultiSelect() {
   const [selectedItems, setSelectedItems] = useState<ItemType[]>([]);
 
   const handleSelectItem = (item: ItemType) => {
-    console.log("item", item);
     setSelectedItems((prev) => [...prev, item]);
+  };
+
+  const handleRemoveItem = (item: ItemType) => {
+    setSelectedItems((prev) => prev.filter((i) => i.id !== item.id));
   };
 
   return (
@@ -24,7 +27,7 @@ export function MultiSelect() {
       >
         <ul className="flex items-center gap-x-2">
           {selectedItems.map((item) => (
-            <Chip data={item} key={item.id} />
+            <Chip data={item} key={item.id} onRemove={handleRemoveItem} />
           ))}
         </ul>
         <input

@@ -3,9 +3,10 @@ import { ItemType } from "./types";
 
 type ChipProps = {
   data: ItemType;
+  onRemove: (item: ItemType) => void;
 };
 
-export function Chip({ data }: ChipProps) {
+export function Chip({ data, onRemove }: ChipProps) {
   // const listItemRef = useRef(null);
 
   return (
@@ -17,7 +18,7 @@ export function Chip({ data }: ChipProps) {
       {data.name}
       <span
         className="select-none cursor-pointer"
-        onClick={() => console.log("Remove Element")}
+        onClick={() => onRemove(data)}
       >
         X
       </span>

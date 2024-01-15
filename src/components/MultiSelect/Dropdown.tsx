@@ -16,6 +16,7 @@ export function Dropdown({ selectedItems, onItemClick }: DropdownProps) {
     >
       {filterDropdownList().map((listItem) => (
         <li
+          key={listItem.id}
           className="flex items-center gap-x-2 hover:bg-gray-200 cursor-pointer p-2"
           onClick={() => onItemClick(listItem)}
         >
