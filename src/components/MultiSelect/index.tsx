@@ -5,10 +5,12 @@ import { Chip } from "./Chip";
 
 export function MultiSelect() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [selectedItems, setSelectedItems] = useState<ItemType[]>([
-    { id: 1, name: "Abhishek", value: "abhishek" },
-    { id: 2, name: "Sakshi", value: "sakshi" },
-  ]);
+  const [selectedItems, setSelectedItems] = useState<ItemType[]>([]);
+
+  const handleSelectItem = (item: ItemType) => {
+    console.log("item", item);
+    setSelectedItems((prev) => [...prev, item]);
+  };
 
   return (
     <div className="">
@@ -35,7 +37,10 @@ export function MultiSelect() {
           // className="border focus:ring-0 outline-none"
         />
 
-        <Dropdown />
+        <Dropdown
+          selectedItems={selectedItems}
+          onItemClick={handleSelectItem}
+        />
       </div>
     </div>
   );
