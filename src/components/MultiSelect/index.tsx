@@ -32,7 +32,10 @@ export function MultiSelect() {
 
   return (
     <>
-      <label htmlFor="multi-input" className="text-sm font-semibold block">
+      <label
+        htmlFor="multi-input"
+        className="text-sm font-semibold block text-left"
+      >
         Select
       </label>
 

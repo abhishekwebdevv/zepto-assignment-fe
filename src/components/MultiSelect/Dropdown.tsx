@@ -48,7 +48,7 @@ export function Dropdown({
 
   return (
     <ul
-      className="invisible bg-white group-focus-within:visible absolute left-0 top-[120%] flex flex-col shadow-lg rounded-md overflow-hidden"
+      className="invisible bg-white group-focus-within:visible absolute left-0 top-[120%] flex flex-col shadow-lg rounded-md w-max overflow-hidden"
       tabIndex={0}
     >
       {filterDropdownList().map((listItem) => (
@@ -57,7 +57,11 @@ export function Dropdown({
           className="flex items-center justify-start gap-x-2 hover:bg-gray-200 cursor-pointer p-2"
           onClick={() => onItemClick(listItem)}
         >
-          <div className="h-8 sm:h-12 w-8 sm:w-12 rounded-full bg-blue-500" />
+          <img
+            src={listItem.avatar}
+            alt=""
+            className="h-8 sm:h-10 w-8 sm:w-10 rounded-full"
+          />
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2">
             <span className="text-sm sm:text-base whitespace-nowrap text-gray-600">
               {highlightText(listItem.name, searchQuery)}

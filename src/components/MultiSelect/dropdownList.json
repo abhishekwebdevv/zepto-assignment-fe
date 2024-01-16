@@ -2,15 +2,61 @@
   {
     "id": 1,
     "name": "Abhishek Singh Dhakad",
-    "email": "abhishekdhakad61@gmail.com"
+    "email": "abhishekdhakad61@gmail.com",
+    "avatar": "https://gravatar.com/avatar/74b17af99e8ba7096accdc1fa8c6eb13?s=400&d=retro&r=x"
   },
-  { "id": 2, "name": "Nayan Kumar", "email": "naK2I@example.com" },
-  { "id": 3, "name": "Rohit Kushwaha", "email": "rohitk@gmail.com" },
-  { "id": 4, "name": "Anita Gros", "email": "anita.gros123@gmail.com" },
-  { "id": 5, "name": "Vishal Dubey", "email": "vishal.dubey123@gmail.com" },
-  { "id": 6, "name": "Megan Smith", "email": "megan.s321@gmail.com" },
-  { "id": 7, "name": "John Doe", "email": "john.doe123@gmail.com" },
-  { "id": 8, "name": "Narayana Garner", "email": "n.giannopoulos@example.com" },
-  { "id": 9, "name": "Kumar Arora", "email": "kumar.arora123@gmail.com" },
-  { "id": 10, "name": "Aditya Yadav", "email": "aditya303@gmail.com" }
+  {
+    "id": 2,
+    "name": "Nayan Kumar",
+    "email": "naK2I@example.com",
+    "avatar": "https://gravatar.com/avatar/3867923656990ecf728d8f377e958131?s=400&d=retro&r=x"
+  },
+  {
+    "id": 3,
+    "name": "Rohit Kushwaha",
+    "email": "rohitk@gmail.com",
+    "avatar": "https://gravatar.com/avatar/cec1ef8cf0624c386ec1b65562c288c7?s=400&d=retro&r=x"
+  },
+  {
+    "id": 4,
+    "name": "Anita Gros",
+    "email": "anita.gros123@gmail.com",
+    "avatar": "https://gravatar.com/avatar/91eeade2f57b0501fa4706273f6b1c92?s=400&d=retro&r=x"
+  },
+  {
+    "id": 5,
+    "name": "Vishal Dubey",
+    "email": "vishal.dubey123@gmail.com",
+    "avatar": "https://gravatar.com/avatar/fcfa78118f1572010aa4e784631494ad?s=400&d=retro&r=x"
+  },
+  {
+    "id": 6,
+    "name": "Megan Smith",
+    "email": "megan.s321@gmail.com",
+    "avatar": "https://gravatar.com/avatar/5b8231a694f259124d6fda93f3cc89a7?s=400&d=retro&r=x"
+  },
+  {
+    "id": 7,
+    "name": "John Doe",
+    "email": "john.doe123@gmail.com",
+    "avatar": "https://gravatar.com/avatar/71bc3575c89135097035f1111bf47a9e?s=400&d=retro&r=x"
+  },
+  {
+    "id": 8,
+    "name": "Narayana Garner",
+    "email": "n.giannopoulos@example.com",
+    "avatar": "https://gravatar.com/avatar/75008cc475ed2a7651b53badf7caf1ae?s=400&d=retro&r=x"
+  },
+  {
+    "id": 9,
+    "name": "Kumar Arora",
+    "email": "kumar.arora123@gmail.com",
+    "avatar": "https://gravatar.com/avatar/4040510b2544aa7a2d3f0644d81300e5?s=400&d=retro&r=x"
+  },
+  {
+    "id": 10,
+    "name": "Aditya Yadav",
+    "email": "aditya303@gmail.com",
+    "avatar": "https://gravatar.com/avatar/a8e40f51def36444185015c9e499c79a?s=400&d=retro&r=x"
+  }
 ]
