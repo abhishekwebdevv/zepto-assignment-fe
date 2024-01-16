@@ -5,18 +5,17 @@ import { Chip } from "./Chip";
 
 export function MultiSelect() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
   const [selectedItems, setSelectedItems] = useState<ItemType[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSelectItem = (item: ItemType) => {
+    setSearchQuery("");
     setSelectedItems((prev) => [...prev, item]);
   };
 
   const handleRemoveItem = (item: ItemType) => {
     setSelectedItems((prev) => prev.filter((i) => i.id !== item.id));
   };
-
-  console.log(listRef.current?.offsetWidth);
 
   return (
     <div className="">
@@ -28,7 +27,7 @@ export function MultiSelect() {
         className="flex items-center gap-x-2 group border-b p-2 focus-within:border-b-2 focus-within:border-blue-400 cursor-text"
         onClick={() => inputRef.current?.focus()}
       >
-        <ul className="flex items-center gap-2 flex-wrap" ref={listRef}>
+        <ul className="flex items-center gap-2 flex-wrap">
           {selectedItems.map((item) => (
             <Chip data={item} key={item.id} onRemove={handleRemoveItem} />
           ))}
@@ -39,10 +38,13 @@ export function MultiSelect() {
               id="multi-input"
               name="multi-input"
               autoComplete="off"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               className="p-0 m-0 border-transparent focus:border-transparent focus:ring-0 w-full outline-none"
             />
             <Dropdown
               selectedItems={selectedItems}
+              searchQuery={searchQuery}
               onItemClick={handleSelectItem}
             />
           </li>
