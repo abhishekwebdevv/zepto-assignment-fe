@@ -7,6 +7,7 @@ export function MultiSelect() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [selectedItems, setSelectedItems] = useState<ItemType[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedChip, setSelectedChip] = useState<ItemType | null>(null);
 
   const handleSelectItem = (item: ItemType) => {
     setSearchQuery("");
@@ -17,8 +18,20 @@ export function MultiSelect() {
     setSelectedItems((prev) => prev.filter((i) => i.id !== item.id));
   };
 
+  const handleBackspaceKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== "Backspace") return;
+    if (searchQuery) return;
+
+    if (selectedChip) {
+      handleRemoveItem(selectedChip);
+      setSelectedChip(null);
+    } else {
+      setSelectedChip(selectedItems[selectedItems.length - 1]);
+    }
+  };
+
   return (
-    <div className="">
+    <>
       <label htmlFor="multi-input" className="text-sm font-semibold block">
         Select
       </label>
@@ -29,7 +42,12 @@ export function MultiSelect() {
       >
         <ul className="flex items-center gap-2 flex-wrap">
           {selectedItems.map((item) => (
-            <Chip data={item} key={item.id} onRemove={handleRemoveItem} />
+            <Chip
+              data={item}
+              key={item.id}
+              selectedChip={selectedChip}
+              onRemove={handleRemoveItem}
+            />
           ))}
           <li className="relative">
             <input
@@ -40,6 +58,8 @@ export function MultiSelect() {
               autoComplete="off"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleBackspaceKeydown}
+              placeholder="Search..."
               className="p-0 m-0 border-transparent focus:border-transparent focus:ring-0 w-full outline-none"
             />
             <Dropdown
@@ -50,6 +70,6 @@ export function MultiSelect() {
           </li>
         </ul>
       </div>
-    </div>
+    </>
   );
 }
