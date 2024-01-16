@@ -47,14 +47,12 @@ export function Dropdown({
   if (filterDropdownList().length === 0) return null;
 
   return (
-    <ul
-      className="invisible bg-white group-focus-within:visible absolute left-0 top-[120%] flex flex-col shadow-lg rounded-md w-max overflow-hidden"
-      tabIndex={0}
-    >
+    <ul className="invisible bg-white group-focus-within:visible absolute left-0 top-[120%] flex flex-col shadow-lg rounded-md w-max overflow-hidden">
       {filterDropdownList().map((listItem) => (
         <li
           key={listItem.id}
           className="flex items-center justify-start gap-x-2 hover:bg-gray-200 cursor-pointer p-2"
+          tabIndex={listItem.id}
           onClick={() => onItemClick(listItem)}
         >
           <img
