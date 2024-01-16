@@ -11,10 +11,10 @@ export function Chip({ data, onRemove }: ChipProps) {
 
   return (
     <li
-      className="rounded-full bg-gray-200 flex items-center gap-x-2 pr-2 whitespace-nowrap"
+      className="rounded-full bg-gray-200 flex items-center gap-x-2 pr-2 whitespace-nowrap text-xs sm:text-sm"
       // ref={listItemRef}
     >
-      <div className="h-10 w-10 aspect-square rounded-full bg-green-500" />
+      <div className="h-8 sm:h-10 w-8 sm:w-10 aspect-square rounded-full bg-green-500 cursor-default" />
       {data.name}
       <span
         className="select-none cursor-pointer"

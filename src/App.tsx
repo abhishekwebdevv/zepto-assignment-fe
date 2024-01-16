@@ -3,7 +3,7 @@ import { MultiSelect } from "./components";
 
 function App() {
   return (
-    <div className="app max-w-[640px] mx-auto">
+    <div className="app max-w-[640px] mx-auto p-2">
       <MultiSelect />
     </div>
   );
